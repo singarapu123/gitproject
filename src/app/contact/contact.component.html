@@ -1,0 +1,45 @@
+<!-- <h1>Contact
+   is working</h1>
+<ng-content ></ng-content>
+<div>
+    <table >
+      <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>username</th>
+        <th>email</th>
+      
+      </tr> 
+      <tr *ngFor="let eee of users">
+        <th>{{eee.id}}</th>
+        <th>{{eee.name}}</th>
+        <th>{{eee.username}}</th>
+        <th>{{eee.email}}</th>
+     
+      </tr>
+    </table>
+  
+ 
+  
+  </div> <br> -->
+<br>
+
+<dx-data-grid 
+id="gridContainer"
+ [dataSource]="users"
+ [columnAutoWidth]="true"
+ [columns]="['id','name', 'username', 'email','address.street','address.city','address.zipcode', ]"
+ [showBorders]="true">
+  <dxo-search-panel [visible]="true" [highlightCaseSensitive]="true"></dxo-search-panel>
+  <!-- <dxo-filter-row [visible]="true"></dxo-filter-row> -->
+  <dxo-header-filter [visible]="true"></dxo-header-filter>
+  <dxo-group-panel [visible]="true"></dxo-group-panel>
+  <!-- <dxo-scrolling mode="virtual"></dxo-scrolling> -->
+  <dxo-selection mode="multiple"></dxo-selection>
+  <dxo-row-dragging [allowReordering]="true" [onReorder]="onReorder" [showDragIcons]="showDragIcons"></dxo-row-dragging>
+</dx-data-grid>
+<br><br>
+
+
+<!-- list -->
+<app-list></app-list>

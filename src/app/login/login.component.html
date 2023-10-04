@@ -1,0 +1,65 @@
+<div [ngClass]="'grid'" >
+<div [ngClass]="'g1'">
+  <h1>valadition forms</h1>
+  <form action="">
+    <div ngModelGroup #group="ngModelGroup" name="grouping"><br>
+      Username <br>
+      <input type="text" ngModel name="unmae" #un="ngModel" required minlength="8" placeholder="Username">
+      <p Class="error" *ngIf="un.touched && un.errors?.['required']">username requred *</p>
+      <p Class="error" *ngIf="un.touched && un.errors?.['maxlength']">user name requred 8 chartaers *</p> <br><br>
+      password<br>
+      <input type="password" ngModel name="psw" #p="ngModel" required minlength="8" placeholder="enter password" />
+      <p Class="error" *ngIf="p.touched && p.errors?.['required']">password requred *</p>
+      <p class="error" *ngIf="p.touched && p.errors?.['maxlength']">password must be in 8 chartaers only *</p><br><br>
+      <button (click)="formes(un,p,group)" [ngStyle]="{'background-color':'green','text':'blue'}">click</button><br><br>
+    </div>
+
+  </form>
+</div><br>
+
+<div [ngClass]="'g1'">
+  <form [formGroup]="login">
+    <h1>reactive forms</h1>
+    <label for="">userName</label><br>
+    <input type="text" formControlName="uname">
+
+    <br><br>
+    <label for="">Password</label><br>
+    <input type="password" formControlName="password">
+    <br><br>
+    <label for="">Date of Birth</label><br>
+    <input type="date" formControlName="date">
+    <br> <br>
+    <label for="">Email</label><br>
+    <input type="text" formcontrolName="email"><br><br>
+    <button (click)="shows()">submit</button>
+
+  </form>
+</div><br><br>
+</div>
+
+
+
+
+<div  [ngClass]="'grid'" >
+
+<form [formGroup]="registrationForm" (ngSubmit)="onSubmit()"  [ngClass]="'g1'">
+  <h2>reactive forms</h2>
+  <div>
+    <label for="username">Username:</label><br>
+    <input type="text" id="username" formControlName="username">
+  </div><br>
+  <div>
+    <label for="password">Password:</label><br>
+    <input type="password" id="password" formControlName="password">
+  </div><br>
+  <div>
+    <label for="confirmPassword">Confirm Password:</label><br>
+    <input type="password" id="confirmPassword" formControlName="confirmPassword">
+  </div><br><div *ngIf="passwordMismatch" class="error">Passwords do not match.</div><br>
+  <div>
+    <button type="submit" [disabled]="!registrationForm.valid">Submit</button>
+  </div><br>
+</form>
+
+</div>

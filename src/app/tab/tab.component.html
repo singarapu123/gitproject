@@ -1,0 +1,114 @@
+<dx-tab-panel [selectedIndex]="0" [loop]="false" [animationEnabled]="true" [swipeEnabled]="true" #tabPanel>
+    <dxi-item title="Employee" icon="floppy">
+        <dx-data-grid id="gridContainer" [dataSource]="users" id="colum">
+
+            <dxi-column dataField="id" dataType="number"></dxi-column>
+            <dxi-column dataField="name" dataType="string"></dxi-column>
+
+            <dxi-column dataField="username" dataType="string"></dxi-column>
+            <dxi-column dataField="email" dataType="string"></dxi-column>
+            <!-- <dxi-column dataField="address" dataType="object"></dxi-column> -->
+
+
+        </dx-data-grid>
+    </dxi-item>
+    <dxi-item title="details" icon="comment">
+        <div class="grid ">
+            <div *ngFor="let item of wings" class="grid1">
+                {{item.Text}}
+                <div *ngIf="item.dataType === 'date'">
+                    <dx-date-box id="space">
+                    </dx-date-box>
+                </div>
+                <div *ngIf="item.dataType === 'String'">
+                    <dx-text-box id="space"></dx-text-box>
+                </div>
+
+                <div *ngIf="item.dataType === 'Number'">
+                    <dx-text-box id="space"></dx-text-box>
+                </div>
+
+
+
+                <div *ngIf="item.dataType === 'selectbox'">
+                    <dx-select-box id="space" [dataSource]="partycode">
+                    </dx-select-box>
+                </div>
+
+                <div *ngIf="item.dataType === 'selectbox1'">
+                    <dx-select-box id="space" [dataSource]="Branch">
+                    </dx-select-box>
+                </div>
+
+                <div *ngIf="item.dataType === 'selectbox2'">
+                    <dx-select-box id="space" [dataSource]="PriceList">
+                    </dx-select-box>
+                </div>
+
+
+                <div *ngIf="item.dataType === 'selectbox3'">
+                    <dx-select-box id="space" [dataSource]="VATcstTransaction">
+                    </dx-select-box>
+                </div>
+
+
+                <div *ngIf="item.dataType === 'selectbox4'">
+                    <dx-select-box id="space" [dataSource]="partyAccount">
+                    </dx-select-box>
+                </div>
+
+                <div *ngIf="item.dataType === 'selectbox5'">
+                    <dx-select-box id="space" [dataSource]="Partycode">
+                    </dx-select-box>
+                </div>
+
+
+            </div>
+        </div>
+    </dxi-item>
+    <dxi-item title="orders" icon="globe">
+
+       
+            <div *dxTemplate="let tabTitle of 'title'">
+                <span>{{tabTitle.tabName}}</span>
+            </div>
+            <div *dxTemplate="let item of 'item'">
+                <!-- <div *ngIf ="!item.singleRow"> -->
+                <dx-data-grid [dataSource]="tabDataSource">
+                    <dxo-header-filter [visible]="true"></dxo-header-filter>
+<dxo-group-panel [visible]="true"></dxo-group-panel>
+<dxo-scrolling mode="virtual"></dxo-scrolling>
+<dxo-selection mode="multiple"></dxo-selection>
+<dxo-row-dragging
+[allowReordering]="true"
+[onReorder]="onReorder"
+[showDragIcons]="showDragIcons"
+[onDragChange]="onDragChange"
+></dxo-row-dragging>
+                    <div>
+                        <dxi-column [dataField]="item.columnName"></dxi-column>
+                    </div>
+                </dx-data-grid>
+                <!-- </div> -->
+            </div>
+    
+      
+    </dxi-item>
+</dx-tab-panel>
+
+
+
+ <dx-tab-panel [dataSource]="tabColumnData">
+    <div *dxTemplate="let tabTitle of 'title'">
+        <span>{{tabTitle.tabName}}</span>
+    </div>
+    <div *dxTemplate="let item of 'item'">
+        <div> 
+        <dx-data-grid [dataSource]="tabDataSource">
+            <div>
+                <dxi-column [dataField]="item.columnName"></dxi-column>
+            </div>
+        </dx-data-grid>
+        </div> 
+    </div>
+</dx-tab-panel> 

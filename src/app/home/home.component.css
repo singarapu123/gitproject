@@ -1,0 +1,56 @@
+.grid{
+    display: grid;
+  
+    /* justify-content: space-evenly; */
+    grid-template-columns: 1fr 1fr 1fr;
+   
+    
+}
+#space{
+ margin-right: 30px;
+ /* width:25em */
+ width:12em;
+ border: 0.1px solid;
+ border-radius: 5px;
+}
+.grid1{
+    display: grid;
+    grid-template-columns: 3fr 9fr;
+    justify-content: space-between;
+    padding-top: 20px;
+}
+.tables{
+    justify-content: center;
+    text-align: center;
+    padding-left: 33em;
+
+}
+.tables2{
+    justify-content: center;
+    text-align: center;
+    padding-left: 5em;  
+}
+#accordion-container{
+  margin-left: 30em;
+}
+.pupupp{
+    background-color: green;
+}
+.g22{color:red}
+
+
+/* smart phone */
+
+@media only screen and (max-width:600px){
+   
+    .grid{
+        display: grid;
+      
+        /* justify-content: space-evenly; */
+        grid-template-columns: 1fr ;
+        padding-left: 30px;
+    
+       
+        
+    }
+}

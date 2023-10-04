@@ -1,0 +1,62 @@
+.a1{
+    color:brown;
+    background-color:antiquewhite;
+    display: inline-flex;
+    padding-top: 2em;
+}
+.a2{
+    text-decoration: none;
+    display: inline-flex;
+    padding-left: 100PX;
+    padding-top: 1em;
+    padding-right: 20em;
+}
+.hello{
+    padding-left: 2em;
+}
+.g1{
+    margin: auto;
+    background-color:rgb(250, 155, 13)  
+    ;
+    text-align: center;
+    width: 23em;
+    box-shadow: 70px,60px;
+}
+.error{
+    color:red
+}
+input.ng-touched.ng-invalid{
+    border: 2px solid red;
+}
+input.ng-touched.ng-valid{
+    border:2px solid green
+}
+
+
+.mm {
+    display: block;
+    width: 200px
+    
+}
+div{
+    color: brown;
+    transition: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+
+}
+div:hover{
+    transition: 25px;
+    transition: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+}
+.g1{
+    margin: auto;
+    background-color:rgb(250, 155, 13)  
+    ;
+    text-align: center;
+    width: 23em;
+    box-shadow: 70px,60px;
+}
+.grid{
+    display:flex;
+  
+}
+

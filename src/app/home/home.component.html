@@ -1,0 +1,120 @@
+
+
+
+<dx-popup
+contentTemplate="popup-content"
+[(visible)]="isPopupVisible"
+    [hideOnOutsideClick]="true"
+    [height]="300"
+    [width]="400"
+    [resizeEnabled]="true"
+    [dragEnabled]="true"
+    position="center"
+    [ngClass]="'g22'"
+  
+    >
+    <div   *dxTemplate="let data of 'popup-content'">
+       
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Penatibus et magnis dis parturient. Eget dolor morbi non arcu risus. Tristique magna sit amet purus gravida quis blandit.
+            Auctor urna nunc id cursus metus aliquam eleifend mi in. Tellus orci ac auctor augue mauris augue neque gravida. Nullam vehicula ipsum a arcu.
+            Nullam ac tortor vitae purus faucibus ornare suspendisse sed nisi. Cursus in hac habitasse platea dictumst. Egestas dui id ornare arcu.
+            Dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim.
+        </p>
+        <p>
+            Mauris rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar. Neque volutpat ac tincidunt vitae semper quis lectus.
+            Sed sed risus pretium quam vulputate dignissim suspendisse in. Urna nec tincidunt praesent semper feugiat nibh sed pulvinar.
+            Ultricies lacus sed turpis tincidunt id aliquet risus feugiat. Amet cursus sit amet dictum sit amet justo donec enim.
+            Vestibulum rhoncus est pellentesque elit ullamcorper. Id aliquet risus feugiat in ante metus dictum at.
+        </p>
+    </div>
+</dx-popup>
+
+<dx-button
+    text="Open popup"
+    (onClick)="togglePopup()"
+    [ngClass]="'pupupp'">
+</dx-button>
+<br><br><br>
+
+
+<button 
+   id="h1">come here you know more</button> 
+<dx-popover 
+target="#h1"
+showEvent="dxhoverstart"
+hideEvent="dxhoverend"
+positon="right"
+  [shading]="false" 
+shadingColor="rgba(0, 0, 0, 0.2)" 
+
+
+>
+<div *dxTemplate="let data of 'content'">
+    <p>Hi ! want to know about me . Then follow in Instagram </p>
+</div>
+
+</dx-popover>
+
+<!-- <input type="text"  [(ngModel)]="name">
+{{name}} -->
+ <br><br>
+ <div>
+
+  <br>
+
+    <dx-accordion 
+      #accordion
+      width="40em"
+      [dataSource]="users"
+      [collapsible]="false"
+      [multiple]="false"
+      [animationDuration]="300"
+      [selectedItems]="[users[0]]"
+      id="accordion-container"
+    >
+    <div *dxTemplate="let ell of 'title'" style="height: 60px;">
+      <h5>{{ell.name}}</h5>
+    </div>
+    <div *dxTemplate="let items of 'item'">
+      
+        
+          <b>{{ items.name }}</b>
+          <span>{{ items.State }}</span>
+      
+      
+          <span>{{ items.usersname }}</span><br>
+          <span>{{ items.email }}</span><br>
+          <span>{{items.address.street}}</span><br>
+          <span>{{items.address.suite}}</span><br>
+          <span>{{items.address.city}}</span>
+          <span>{{items.address.zipcode}}</span>
+    
+    </div>
+    </dx-accordion>
+
+   
+
+    <app-searchgrid></app-searchgrid>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

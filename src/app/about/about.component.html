@@ -1,0 +1,133 @@
+<div class="grid " >
+<div 
+*ngFor="let item of wings"
+ class="grid1">
+{{item.Text}}
+<div *ngIf="item.dataType === 'date'" >
+    <dx-date-box id="space">
+    </dx-date-box>
+</div>
+<div *ngIf="item.dataType === 'String'">
+    <dx-text-box id="space"></dx-text-box>
+</div>
+
+<div *ngIf="item.dataType === 'Number'">
+    <dx-text-box id="space"></dx-text-box>
+</div>
+    
+
+
+<div *ngIf="item.dataType === 'selectbox'">
+    <dx-select-box id="space"
+    [dataSource]="partycode"
+    >
+    </dx-select-box>
+</div>
+
+<div *ngIf="item.dataType === 'selectbox1'">
+    <dx-select-box id="space"
+    [dataSource]="Branch"
+    >
+    </dx-select-box>
+</div>
+
+<div *ngIf="item.dataType === 'selectbox2'">
+    <dx-select-box id="space"
+    [dataSource]="PriceList"
+    >
+    </dx-select-box>
+</div>
+
+
+<div *ngIf="item.dataType === 'selectbox3'">
+    <dx-select-box id="space"
+    [dataSource]="VATcstTransaction"
+    >
+    </dx-select-box>
+</div>
+
+
+<div *ngIf="item.dataType === 'selectbox4'">
+    <dx-select-box id="space"
+    [dataSource]="partyAccount"
+    >
+    </dx-select-box>
+</div>
+
+<div *ngIf="item.dataType === 'selectbox5'">
+    <dx-select-box id="space"
+    [dataSource]="Partycode"
+    >
+    </dx-select-box>
+</div>
+
+
+</div>
+</div>
+
+
+
+
+<br>
+<hr><br><br>
+<!-- task -->
+
+
+<dx-radio-group [items]="pri" [(value)]="selectedColumn" layout="horizontal">
+</dx-radio-group><br>
+
+<span>Search here</span>&nbsp; &nbsp;  &nbsp; &nbsp;
+<div class="divs">
+  <dx-text-box
+  [(ngModel)]="searchText"
+  width="15em"
+  [showClearButton]="true"
+  placeholder="Type...."
+></dx-text-box>  &nbsp; &nbsp;
+<dx-button
+stylingMode="contained"
+text="Go"
+type="normal"
+[width]="120"
+(click)="applyFilter()"
+>
+</dx-button>&nbsp; &nbsp;
+  <dx-button
+  stylingMode="contained"
+  text="reset"
+  type="normal"
+  [width]="120"
+  (click)="click()"
+>
+</dx-button>
+</div>
+<br>
+<h3 id="centers">Employee Details</h3>
+<dx-data-grid
+  id="gridContainer"
+  [dataSource]="users"
+  [columnAutoWidth]="true"
+  [columns]="['id','name', 'username', 'email','address.street','address.city','address.zipcode']"
+  [showBorders]="true"
+>
+</dx-data-grid>
+
+
+
+
+
+
+
+
+
+ <!-- <dxo-search-panel [visible]="true" [highlightCaseSensitive]="true" [ngClass]="'panel'"
+  >
+
+</dxo-search-panel> -->
+
+
+
+
+
+
+
